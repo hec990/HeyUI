@@ -43,6 +43,7 @@ function getSidebar() {
             text:'组件',
             children:[
                 { text: 'Switch 开关', link: '/components/switch/' },
+                { text: 'Button 按钮', link: '/components/button/' },
             ]
         },
     ]
