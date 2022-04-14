@@ -1,5 +1,8 @@
 <template>
-  <button class="hey-switch" :class="{'hey-checked':value}" @click="toggle">
+  <button class="hey-switch"
+          :class="[{'hey-checked':value},{'hey-disabled':disabled}]"
+          @click="toggle"
+          :disabled="disabled">
     <span></span>
   </button>
 </template>
@@ -9,6 +12,7 @@ export default {
   name: "hey-switch",
   props:{
     value: Boolean,
+    disabled: Boolean
   },
   setup(props,context){
     const toggle = () =>{
@@ -47,6 +51,9 @@ export default {
   }
   &.hey-checked > span{
     left: calc(100% - #{18px} - 2px);
+  }
+  &.hey-disabled {
+    cursor: not-allowed;
   }
 }
 </style>
