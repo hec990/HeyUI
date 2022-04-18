@@ -4,9 +4,11 @@
 ### 使用组件
 
 ```html
-<!-- 1. 基础开关-->
-<Switch v-model:value="bool"></Switch>
-<!-- 2. 禁用-->
+<!-- 1. 默认按钮-->
+<Switch v-model:value="bool" ></Switch>
+<!-- 2. 自定义颜色-->
+<Switch v-model:value="bool" active-color="#008000" inactive-color="#00CED1"></Switch>
+<!-- 3. 禁用-->
 <Switch v-model:value="bool" disabled></Switch>
 ```
 
