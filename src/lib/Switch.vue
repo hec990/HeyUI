@@ -10,7 +10,10 @@
           @click="toggle"
           :disabled="disabled"
   >
-    <span></span>
+    <span>
+      <slot name="center-off" v-if="value"> {{ middleTextNo() }}</slot>
+      <slot name="center-no" v-else>{{ middleTextOff() }}</slot>
+    </span>
   </button>
 </template>
 
@@ -33,13 +36,29 @@ export default {
       type: String,
       default: '#E3E3E3'
     },
+    middleTextOff: {
+      type: String,
+      default: '',
+    },
+    middleTextNo: {
+      type: String,
+      default: '',
+    },
   },
   setup(props, context) {
     const toggle = () => {
       context.emit('update:value', !props.value)
     }
+    const middleTextNo = () => {
+      return props.middleTextNo.substr(0, 1);
+    };
+    const middleTextOff = () => {
+      return props.middleTextOff.substr(0, 1);
+    };
     return {
-      toggle
+      toggle,
+      middleTextNo,
+      middleTextOff,
     }
   }
 }
@@ -63,6 +82,9 @@ export default {
     background-color: white;
     transition: left 250ms;
     border-radius: 20px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #8333a8;
   }
 
   &.hey-checked > span {
