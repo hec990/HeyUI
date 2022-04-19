@@ -1,5 +1,6 @@
 <template>
   <Switch v-model:value="value1" disabled></Switch>
+  <br>
   <Switch v-model:value="value2" disabled></Switch>
 </template>
 
