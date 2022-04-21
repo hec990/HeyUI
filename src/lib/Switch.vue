@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .hey-switch {
   height: 22px;
   width: 22px*2;
