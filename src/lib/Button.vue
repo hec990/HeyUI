@@ -1,12 +1,21 @@
 <template>
-  <button class="hey-button">
+  <button
+      class="hey-button"
+      :class="[`hey-theme-${theme}`]"
+  >
     <slot/>
   </button>
 </template>
 
 <script>
 export default {
-  name: "hey-button"
+  name: "hey-button",
+  props:{
+    theme:{
+      type: String,
+      default: "button"
+    }
+  }
 }
 </script>
 
@@ -43,6 +52,22 @@ $radius: 4px;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  &.hey-theme-link{
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,&:focus{
+      color: lighten($blue, 10%);
+    }
+  }
+  &.hey-theme-text{
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,&:focus{
+      background: darken(white, 5%);;
+    }
   }
 }
 </style>

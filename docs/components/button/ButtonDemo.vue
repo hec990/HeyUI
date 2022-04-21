@@ -1,14 +1,17 @@
 <template>
   <p>默认按钮</p>
-  <Button1Demo></Button1Demo>
+  <ButtonDemo1></ButtonDemo1>
+  <p>支持theme属性</p>
+  <ButtonDemo2></ButtonDemo2>
 </template>
 
 <script>
-import Button1Demo from './Button1.demo.vue'
+import ButtonDemo1 from "./ButtonDemo1.vue"
+import ButtonDemo2 from "./ButtonDemo2.vue"
 export default {
-  name: "ButtonDemo.vue",
-  components:{
-   Button1Demo
-  }
+ components:{
+   ButtonDemo1,
+   ButtonDemo2
+ }
 }
 </script>
