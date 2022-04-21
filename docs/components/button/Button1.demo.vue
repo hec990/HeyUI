@@ -4,9 +4,10 @@
 
 <script>
 import Button from '../../../src/lib/Button.vue'
+
 export default {
   name: "Button1.demo",
-  components:{
+  components: {
     Button
   }
 }
