@@ -1,19 +1,38 @@
 <template>
   <button
       class="hey-button"
-      :class="[`hey-theme-${theme}`]"
+      :class="classes"
   >
     <slot/>
   </button>
 </template>
 
 <script>
+import {computed} from 'vue'
+
 export default {
   name: "hey-button",
-  props:{
-    theme:{
+  props: {
+    theme: {
       type: String,
       default: "button"
+    },
+    size: {
+      type: String,
+      default: "normal"
+    }
+  },
+  setup(props) {
+    const {theme,size} = props
+    const classes = computed(() => {
+      return {
+        [`hey-theme-${theme}`]: theme,
+        [`hey-size-${size}`]: size,
+      }
+    })
+
+    return {
+      classes
     }
   }
 }
@@ -39,34 +58,56 @@ $radius: 4px;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+
   & + & {
     margin-left: 8px;
   }
+
   &:hover,
   &:focus {
     color: $blue;
     border-color: $blue;
   }
+
   &:focus {
     outline: none;
   }
+
   &::-moz-focus-inner {
     border: 0;
   }
-  &.hey-theme-link{
+
+  &.hey-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       color: lighten($blue, 10%);
     }
   }
-  &.hey-theme-text{
+
+  &.hey-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       background: darken(white, 5%);;
+    }
+  }
+
+  &.hey-theme-button {
+    &.hey-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px
+    }
+
+    &.hey-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
     }
   }
 }
