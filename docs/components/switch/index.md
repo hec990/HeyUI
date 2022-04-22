@@ -13,8 +13,9 @@
 ```
 
 ```vue
+
 <script>
-import Switch from "../../../src/lib/Switch.vue";
+import Switch from "./hey-switch.vue";
 import {ref} from 'vue';
 
 export default {

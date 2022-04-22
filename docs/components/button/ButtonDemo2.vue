@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Button from '../../../src/lib/Button.vue'
+import Button from '../../../src/lib/hey-button.vue'
 export default {
   name: "ButtonDemo2",
   components:{

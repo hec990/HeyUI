@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Switch from "../../../src/lib/Switch.vue";
+import Switch from "../../../src/lib/hey-switch.vue";
 import {ref} from 'vue';
 
 export default {
