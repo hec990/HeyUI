@@ -11,13 +11,14 @@
           :disabled="disabled"
   >
     <span>
-      <slot name="center-off" v-if="value"> {{ middleTextNo() }}</slot>
-      <slot name="center-no" v-else>{{ middleTextOff() }}</slot>
+      <slot name="center-off" v-if="value"> {{ middleTextNo }}</slot>
+      <slot name="center-no" v-else>{{ middleTextOff }}</slot>
     </span>
   </button>
 </template>
 
 <script>
+import {computed} from 'vue';
 export default {
   name: "hey-switch",
   props: {
@@ -49,12 +50,13 @@ export default {
     const toggle = () => {
       context.emit('update:value', !props.value)
     }
-    const middleTextNo = () => {
+    const middleTextNo = computed(() => {
       return props.middleTextNo.substr(0, 1);
-    };
-    const middleTextOff = () => {
+    })
+
+    const middleTextOff = computed(() => {
       return props.middleTextOff.substr(0, 1);
-    };
+    })
     return {
       toggle,
       middleTextNo,
