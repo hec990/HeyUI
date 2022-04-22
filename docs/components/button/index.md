@@ -3,7 +3,7 @@
 <ButtonDemo/>
 
 <script>
-    import ButtonDemo from './ButtonDemo.vue'
+    import ButtonDemo from './ButtonDemo.vue';
     export default {
         components: {ButtonDemo},
     }

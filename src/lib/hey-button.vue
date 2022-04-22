@@ -2,13 +2,14 @@
   <button
       class="hey-button"
       :class="classes"
+      :disabled="disabled"
   >
     <slot/>
   </button>
 </template>
 
 <script>
-import {computed} from 'vue'
+import {computed} from 'vue';
 
 export default {
   name: "hey-button",
@@ -20,14 +21,18 @@ export default {
     size: {
       type: String,
       default: "normal"
+    },
+    disabled: {
+      type: Boolean
     }
   },
   setup(props) {
-    const {theme,size} = props
+    const {theme, size,disabled} = props
     const classes = computed(() => {
       return {
         [`hey-theme-${theme}`]: theme,
         [`hey-size-${size}`]: size,
+        ['hey-button-disabled']: disabled
       }
     })
 
@@ -108,6 +113,16 @@ $radius: 4px;
       font-size: 12px;
       height: 20px;
       padding: 0 4px;
+    }
+  }
+
+  &.hey-button-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    &:hover,
+    &:focus {
+      color: inherit;
+      border-color: #d9d9d9;
     }
   }
 }

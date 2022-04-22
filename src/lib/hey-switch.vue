@@ -2,7 +2,7 @@
   <button class="hey-switch"
           :class="[
           {'hey-checked':value},
-          {'hey-disabled':disabled},
+          {'hey-switch-disabled':disabled},
           ]"
           :style="{
             backgroundColor: value ? activeColor : inactiveColor
@@ -93,7 +93,7 @@ export default {
     left: calc(100% - #{18px} - 2px);
   }
 
-  &.hey-disabled {
+  &.hey-switch-disabled {
     cursor: not-allowed;
     opacity: 0.7;
   }
