@@ -1,5 +1,5 @@
 <template>
-  <svg class="hey-icon">
+  <svg class="hey-icon" :class="classList">
     <use v-bind:xlink:href="iconName"></use>
   </svg>
 </template>
@@ -18,27 +18,45 @@ export default {
     size: {
       type: Number,
       default: 25
+    },
+    spin: {
+      type: Boolean
     }
   },
   setup(props){
-    const {name,size} = props;
+    const {name,size,spin} = props;
     const iconName = computed(() => `#icon-${name}`);
     const iconSize = computed(() => size + "px");
+    const classList = computed(() => {
+      return [spin ? "hey-icon-revolve" : ""];
+    });
 
     return {
       iconName,
-      iconSize
+      iconSize,
+      classList
     }
   }
 }
 </script>
 
 <style lang="scss">
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .hey-icon {
   width: v-bind(iconSize);
   height: v-bind(iconSize);
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  &.hey-icon-revolve {
+    animation: rotate 1.5s linear infinite;
+  }
 }
 </style>
