@@ -1,5 +1,8 @@
 <template>
-  <hey-icon></hey-icon>
+  <hey-icon name="tongzhi"></hey-icon>
+  <hey-icon name="dingwei"></hey-icon>
+  <hey-icon name="chazhao"></hey-icon>
+  <hey-icon name="linggan"></hey-icon>
 </template>
 
 <script>
