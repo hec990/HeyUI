@@ -14,14 +14,20 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    size: {
+      type: Number,
+      default: 25
     }
   },
   setup(props){
-    const {name} = props;
+    const {name,size} = props;
     const iconName = computed(() => `#icon-${name}`);
+    const iconSize = computed(() => size + "px");
 
     return {
-      iconName
+      iconName,
+      iconSize
     }
   }
 }
@@ -29,8 +35,8 @@ export default {
 
 <style lang="scss">
 .hey-icon {
-  width: 2em;
-  height: 2em;
+  width: v-bind(iconSize);
+  height: v-bind(iconSize);
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
