@@ -1,12 +1,17 @@
 <template>
   <div class="hey-input-container">
-    <input type="text" class="hey-input">
+    <input type="text" class="hey-input" :value="value">
   </div>
 </template>
 
 <script>
 export default {
-  name: "hey-input"
+  name: "hey-input",
+  props: {
+    value:{
+      type: String
+    }
+  }
 }
 </script>
 
