@@ -44,6 +44,9 @@ export default {
     &:hover, &:focus {
       border-color: #8333a8;
     }
+    &[readonly]{
+      color: #bbb;
+    }
     // 如果原生input标签上存在disabled属性就设置这个样式
     &[disabled] {
       border-color: #bbb;
