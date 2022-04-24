@@ -1,9 +1,9 @@
 <template>
-  <hey-input value="Hello" :readonly="toggleReadonly"></hey-input>
-  <hey-input :value="value" :readonly="toggleReadonly"></hey-input>
+  <hey-input value="Hello" :readonly="readonlyValue"></hey-input>
+  <hey-input :value="value" :readonly="readonlyValue"></hey-input>
   <div>
-    <span>{{toggleReadonly ? "开启" : "关闭"}} readonly</span>
-    <button @click="toggleReadonly = !toggleReadonly">toggle</button>
+    <span>{{readonlyValue ? "开启" : "关闭"}} readonly</span>
+    <button @click="readonlyValue = !readonlyValue">toggle</button>
   </div>
 </template>
 
@@ -18,11 +18,11 @@ export default {
   },
   setup() {
     const value = ref('Hello Input');
-    const toggleReadonly = ref(true)
+    const readonlyValue = ref(true)
 
     return {
       value,
-      toggleReadonly
+      readonlyValue
     }
   }
 }

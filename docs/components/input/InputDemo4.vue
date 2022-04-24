@@ -1,9 +1,9 @@
 <template>
-  <hey-input value="Hello" :disabled="toggleDisabled"></hey-input>
-  <hey-input :value="value" :disabled="toggleDisabled"></hey-input>
+  <hey-input value="Hello" :disabled="disabledValue"></hey-input>
+  <hey-input :value="value" :disabled="disabledValue"></hey-input>
   <div>
-    <span>{{toggleDisabled ? "开启" : "关闭"}} disabled</span>
-    <button @click="toggleDisabled = !toggleDisabled">toggle</button>
+    <span>{{disabledValue ? "开启" : "关闭"}} disabled</span>
+    <button @click="disabledValue = !disabledValue">toggle</button>
   </div>
 </template>
 
@@ -18,11 +18,11 @@ export default {
   },
   setup() {
     const value = ref('Hello Input');
-    const toggleDisabled = ref(true)
+    const disabledValue = ref(true)
 
     return {
       value,
-      toggleDisabled
+      disabledValue
     }
   }
 }
