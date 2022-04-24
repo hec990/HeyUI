@@ -4,6 +4,7 @@
            class="hey-input"
            :value="value"
            :readonly="readonly"
+           :disabled="disabled"
     >
   </div>
 </template>
@@ -16,6 +17,10 @@ export default {
       type: String
     },
     readonly: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     }
@@ -38,6 +43,12 @@ export default {
 
     &:hover, &:focus {
       border-color: #8333a8;
+    }
+    // 如果原生input标签上存在disabled属性就设置这个样式
+    &[disabled] {
+      border-color: #bbb;
+      color: #bbb;
+      cursor: not-allowed;
     }
   }
 }

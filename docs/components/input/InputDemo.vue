@@ -5,18 +5,22 @@
   <InputDemo2></InputDemo2>
   <p>支持 readonly</p>
   <InputDemo3></InputDemo3>
+  <p>支持 disabled</p>
+  <InputDemo4></InputDemo4>
 </template>
 
 <script>
 import InputDemo1 from "./InputDemo1.vue";
 import InputDemo2 from "./InputDemo2.vue";
 import InputDemo3 from "./InputDemo3.vue";
+import InputDemo4 from "./InputDemo4.vue";
 export default {
   name: "InputDemo",
   components:{
     InputDemo1,
     InputDemo2,
-    InputDemo3
+    InputDemo3,
+    InputDemo4
   }
 }
 </script>
