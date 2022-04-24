@@ -1,6 +1,10 @@
 <template>
   <div class="hey-input-container">
-    <input type="text" class="hey-input" :value="value">
+    <input type="text"
+           class="hey-input"
+           :value="value"
+           :readonly="readonly"
+    >
   </div>
 </template>
 
@@ -8,8 +12,12 @@
 export default {
   name: "hey-input",
   props: {
-    value:{
+    value: {
       type: String
+    },
+    readonly: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -19,14 +27,18 @@ export default {
 .hey-input-container {
   font-size: 12px;
   display: inline-block;
+
   > .hey-input {
     height: 32px;
     border: 1px solid #999;
     border-radius: 4px;
     padding: 0 8px;
     font-size: inherit;
-    outline:none;
-    &:hover,&:focus { border-color: #8333a8; }
+    outline: none;
+
+    &:hover, &:focus {
+      border-color: #8333a8;
+    }
   }
 }
 </style>

@@ -3,16 +3,20 @@
   <InputDemo1></InputDemo1>
   <p>支持设置输入框value</p>
   <InputDemo2></InputDemo2>
+  <p>支持 readonly</p>
+  <InputDemo3></InputDemo3>
 </template>
 
 <script>
 import InputDemo1 from "./InputDemo1.vue";
 import InputDemo2 from "./InputDemo2.vue";
+import InputDemo3 from "./InputDemo3.vue";
 export default {
   name: "InputDemo",
   components:{
     InputDemo1,
-    InputDemo2
+    InputDemo2,
+    InputDemo3
   }
 }
 </script>
