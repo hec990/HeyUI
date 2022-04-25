@@ -9,6 +9,8 @@
   <InputDemo4></InputDemo4>
   <p>error</p>
   <InputDemo5></InputDemo5>
+  <p>支持placeholder</p>
+  <InputDemo6></InputDemo6>
 </template>
 
 <script>
@@ -17,6 +19,7 @@ import InputDemo2 from "./InputDemo2.vue";
 import InputDemo3 from "./InputDemo3.vue";
 import InputDemo4 from "./InputDemo4.vue";
 import InputDemo5 from "./InputDemo5.vue";
+import InputDemo6 from "./InputDemo6.vue";
 export default {
   name: "InputDemo",
   components:{
@@ -24,7 +27,8 @@ export default {
     InputDemo2,
     InputDemo3,
     InputDemo4,
-    InputDemo5
+    InputDemo5,
+    InputDemo6
   }
 }
 </script>

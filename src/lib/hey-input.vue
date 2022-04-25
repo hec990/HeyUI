@@ -6,6 +6,7 @@
            :value="value"
            :readonly="readonly"
            :disabled="disabled"
+           :placeholder="placeholder"
     >
     <template v-if="errorMessage">
       <hey-icon name="error-active" :size="20"></hey-icon>
@@ -20,9 +21,7 @@ import HeyIcon from './hey-icon.vue'
 export default {
   name: "hey-input",
   props: {
-    value: {
-      type: String
-    },
+    value: String,
     readonly: {
       type: Boolean,
       default: false
@@ -31,8 +30,10 @@ export default {
       type: Boolean,
       default: false
     },
-    errorMessage: {
-      type: String
+    errorMessage: String,
+    placeholder: {
+      type: String,
+      default: '请您输入文字'
     }
   },
   components: {
