@@ -2,14 +2,14 @@
   <div class="hey-input-container">
     <input type="text"
            class="hey-input"
-           :class="{'hey-input-error':error}"
+           :class="{'hey-input-error': errorMessage}"
            :value="value"
            :readonly="readonly"
            :disabled="disabled"
     >
-    <template v-if="error">
+    <template v-if="errorMessage">
       <hey-icon name="error-active" :size="20"></hey-icon>
-      <span class="hey-errorMessage">{{ error }}</span>
+      <span class="hey-errorMessage">{{ errorMessage }}</span>
     </template>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
       type: Boolean,
       default: false
     },
-    error: {
+    errorMessage: {
       type: String
     }
   },

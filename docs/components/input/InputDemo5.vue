@@ -1,5 +1,5 @@
 <template>
-  <hey-input :error="errorMessage"></hey-input>
+  <hey-input :errorMessage="errorMessage"></hey-input>
 </template>
 
 <script>
@@ -12,9 +12,10 @@ export default {
   },
   setup(){
     const errorMessage = ref('用户名不能少于2个字');
-
+    const passMessage = ref('正确')
     return {
-      errorMessage
+      errorMessage,
+      passMessage
     }
   }
 }
