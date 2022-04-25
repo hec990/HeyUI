@@ -6,7 +6,7 @@
 
 <script>
 import {computed} from 'vue';
-import 'http://at.alicdn.com/t/font_3352035_z48p9ggpijs.js'
+import 'http://at.alicdn.com/t/font_3352035_xenlfa5xkl.js'
 
 export default {
   name: "hye-icon",
