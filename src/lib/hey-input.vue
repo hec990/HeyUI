@@ -2,7 +2,7 @@
   <div class="hey-input-container">
     <input type="text"
            class="hey-input"
-           :class="{'hey-input-error': errorMessage}"
+           :class="classList"
            :value="value"
            :readonly="readonly"
            :disabled="disabled"
@@ -17,6 +17,7 @@
 
 <script>
 import HeyIcon from './hey-icon.vue'
+import {computed} from "vue";
 
 export default {
   name: "hey-input",
@@ -34,6 +35,16 @@ export default {
     placeholder: {
       type: String,
       default: '请您输入文字'
+    }
+  },
+  setup(props){
+    const {errorMessage} = props;
+    const classList = computed(()=>{
+      return {'hey-input-error': errorMessage}
+    })
+
+    return {
+      classList
     }
   },
   components: {
