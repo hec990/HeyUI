@@ -8,7 +8,7 @@
            :disabled="disabled"
     >
     <template v-if="error">
-      <hey-icon name="error-active" size="20"></hey-icon>
+      <hey-icon name="error-active" :size="20"></hey-icon>
       <span class="hey-errorMessage">{{ error }}</span>
     </template>
   </div>
@@ -32,8 +32,7 @@ export default {
       default: false
     },
     error: {
-      type: Boolean,
-      default: false
+      type: String
     }
   },
   components: {
