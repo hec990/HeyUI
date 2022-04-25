@@ -1,6 +1,6 @@
 <template>
   <div class="hey-input-container">
-    <input type="text"
+    <input :type="type"
            class="hey-input"
            :class="classList"
            :value="value"
@@ -35,7 +35,8 @@ export default {
     placeholder: {
       type: String,
       default: '请您输入文字'
-    }
+    },
+    type: String
   },
   setup(props){
     const {errorMessage} = props;

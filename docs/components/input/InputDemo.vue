@@ -7,7 +7,7 @@
   <InputDemo3></InputDemo3>
   <p>支持 disabled</p>
   <InputDemo4></InputDemo4>
-  <p>error</p>
+  <p>登录页</p>
   <InputDemo5></InputDemo5>
   <p>支持placeholder</p>
   <InputDemo6></InputDemo6>
