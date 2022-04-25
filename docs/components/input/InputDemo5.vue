@@ -1,7 +1,7 @@
 <template>
-  <hey-input type="username" placeholder="请您输入用户名" :errorMessage="errorMessage1"></hey-input>
+  <hey-input type="username" placeholder="用户名" :errorMessage="errorMessage1"></hey-input>
   <p></p>
-  <hey-input type="password" placeholder="请您输入密码" :errorMessage="errorMessage2"></hey-input>
+  <hey-input type="password" placeholder="密码" :errorMessage="errorMessage2"></hey-input>
 </template>
 
 <script>

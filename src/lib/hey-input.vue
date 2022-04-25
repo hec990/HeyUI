@@ -32,10 +32,7 @@ export default {
       default: false
     },
     errorMessage: String,
-    placeholder: {
-      type: String,
-      default: '请您输入文字'
-    },
+    placeholder: String,
     type: String
   },
   setup(props){
