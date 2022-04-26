@@ -13,7 +13,7 @@ module.exports = {
             },
             {
                 text: 'GitHub',
-                link: 'https://github.com/hec990/hey-ui'
+                link: 'https://github.com/hec990/HeyUI.git'
             },
         ],
         sidebar:{
